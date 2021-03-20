@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class pauseScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] interfaceCanvases;
-    private bool pause;
+    [SerializeField] private GameObject[] interfaceCanvases;    //2 канваса, 1 под кнопку паузы, 2 экран паузы
+    private bool pause; //состояние паузы
     private GameObject _currentCanvas;
+
     private void Awake()
     {
         _currentCanvas = interfaceCanvases[0];
         _currentCanvas.SetActive(true);
     }
+
+    /// <summary>
+    /// функция Паузы игры
+    /// </summary>
     public void StartOrPause()
     {
-
         pause = !pause;
         if (pause)
         {
@@ -27,8 +29,6 @@ public class pauseScript : MonoBehaviour
             ChangeCanvas(0);
         }
     }
-
-    
 
     /// <summary>
     /// смена Canvas игры на Canvas pause

@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _menuCanvases;
+    [SerializeField] private GameObject[] _menuCanvases;    //2 канваса, 1 экран с запуском игры, 2 с выбором level
     private GameObject _currentCanvas;
-    
-    
 
     private void Awake()
     {
@@ -34,9 +30,9 @@ public class MenuManager : MonoBehaviour
             _currentCanvas.SetActive(true);
         }
     }
-   
-   
 
-    
+
+
+
 
 }
