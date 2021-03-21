@@ -29,4 +29,15 @@ public class SceneLoader : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
+
+    /// <summary>
+    /// загрузка следующего по buildindex уровня, если он не последний, в частности 5
+    /// </summary>
+    public void LoadNextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 5)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 }
