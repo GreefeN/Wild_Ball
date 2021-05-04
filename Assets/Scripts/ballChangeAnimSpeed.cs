@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ballChangeAnimSpeed : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class ballChangeAnimSpeed : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        _anim.SetFloat("speed", _ballBody.velocity.y);
+        _anim.SetFloat("speedUPDOWN", _ballBody.velocity.y); //переключение анимации ускорения/замедления
+        _anim.SetInteger("speed", Convert.ToInt32(_ballBody.velocity.magnitude)); //переменная "скорости" для анимации среднего значения вращения
+        if (_ballBody.velocity.y == 0) _anim.SetBool("NotUporDown", true); //переменная для условия перехода от ускорения/замедления к простому вращению
+        else _anim.SetBool("NotUporDown", false);
     }
 }
