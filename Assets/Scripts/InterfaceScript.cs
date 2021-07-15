@@ -9,6 +9,7 @@ namespace WildBall
         private GameObject _currentCanvas; //текущий Canvas
         public GameObject hint; //объект содержащий текст подсказки
         public Text textHint;
+        public Text countBonus;
 
         private void Awake()
         {
